@@ -1,7 +1,7 @@
 """Utility file to seed ratings database from MovieLens data in seed_data/"""
 
 from sqlalchemy import func
-from model import connect_to_db, db, Character, Movie, Movie_Character, Group, CharacterGroup
+from model import connect_to_db, db, Character, Movie, MovieCharacter, Group, CharacterGroup
 from server import app
 import requests
 
@@ -11,16 +11,20 @@ def load_movies():
     
     print "Movies"
 
-    payload = {"api_key":"d8ee42eb41cc997b74a9762e2a427de7"}
+    payload1 = {"page":"1","api_key":"d8ee42eb41cc997b74a9762e2a427de7"}
+    payload2 = {"page":"2","api_key":"d8ee42eb41cc997b74a9762e2a427de7"}
+    
+    results1 = requests.get("http://api.themoviedb.org/3/keyword/180547/movies",params=payload1)
+    results2 = requests.get("http://api.themoviedb.org/3/keyword/180547/movies",params=payload2)
 
-    #request to API for movie data, returns a JSON
-    results = requests.get("http://api.themoviedb.org/3/keyword/180547/movies",params=payload)
 
     #turns JSON result into a dictionary
-    json_dict = results.json()
+    json_dict1 = results1.json()
+    json_dict2 = results2.json()
 
-    #provides my list
-    movie_list = json_dict['results']
+
+    #provides my list (concatenating list of dictionaries together)
+    movie_list = json_dict1['results'] + json_dict2['results'
 
     for movie in movie_list:
         movie_id = movie['id']
@@ -37,9 +41,6 @@ def load_movies():
 
 
         db.session.add(new_movie_list)
-
-        if i % 100 ==0:
-            print i
 
     db.session.commit()
 

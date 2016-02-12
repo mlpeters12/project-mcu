@@ -17,7 +17,9 @@ class Character(db.Model):
     description = db.Column(db.String(2000), nullable=False)
     image = db.Column(db.String(100))
 
-
+    characters = db.relationship("Group",
+                                    secondary="charactergroups",
+                                    backref="groups")
 
     def __repr__(self):
         """Representation of info when printed."""
@@ -36,7 +38,7 @@ class Movie(db.Model):
     release_date = db.Column(db.String(10))
     image = db.Column(db.String(100))
 
-    characters = db.relationship("movies",
+    characters = db.relationship("Movie",
                                     secondary="moviecharacters",
                                     backref="movies")
 
@@ -45,7 +47,7 @@ class Movie(db.Model):
 
         return "<%s:%s>" % (self.movie_name, self.movie_id)
 
-class Movie_Character(db.Model):
+class MovieCharacter(db.Model):
     """Association table."""
 
     __tablename__ = "moviecharacters"
@@ -91,11 +93,13 @@ class CharacterGroup(db.Model):
     group_id = db.Column(db.Integer, 
                         db.ForeignKey('groups.group_id'), 
                         nullable=False)
-    joined = db.Column(db.String(50), nullable=False)
-    left = db.Column(db.String(50))
+    joined_at = db.Column(db.String(50), nullable=False)
+    left_at = db.Column(db.String(50))
 
-    characters = db.relationship("characters", backref="chargroups")
-    groups = db.relationship("groups", backref="chargroups")
+    characters = db.relationship("Character", 
+                                backref= db.backref("chargroups"))
+    groups = db.relationship("Group",
+                            backref=db.backref("chargroups"))
 
 
 
