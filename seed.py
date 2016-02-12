@@ -61,6 +61,6 @@ def load_movies():
 
 if __name__ == "__main__":
     connect_to_db(app)
-
+    load_movies()
     # In case tables haven't been created, create them
     db.create_all()

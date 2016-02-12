@@ -36,7 +36,7 @@ class Movie(db.Model):
     release_date = db.Column(db.String(10))
     image = db.Column(db.String(100))
 
-    characters = db.relationship("Movies",
+    characters = db.relationship("movies",
                                     secondary="moviecharacters",
                                     backref="movies")
 
@@ -94,8 +94,8 @@ class CharacterGroup(db.Model):
     joined = db.Column(db.String(50), nullable=False)
     left = db.Column(db.String(50))
 
-    character = db.relationship("Character", backref="chargroups")
-    group = db.relationship("Group", backref="chargroups")
+    characters = db.relationship("characters", backref="chargroups")
+    groups = db.relationship("groups", backref="chargroups")
 
 
 
