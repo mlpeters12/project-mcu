@@ -1,0 +1,32 @@
+
+
+
+div.navbar-header img {
+    width: 30px;
+    float: left;
+    margin-top: 7px;
+    margin-right: 7px;
+}
+
+img.melon-list {
+    height: 15px;
+}
+
+/* all-melons listing */
+
+div.movie-summary img {
+    width: 15em;
+}
+
+div.movie-summary .released_at {
+    margin: 0.5em 0;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+
+/* melon-detail-page */
+
+.warning {
+    color: red;
+}

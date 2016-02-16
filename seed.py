@@ -24,7 +24,7 @@ def load_movies():
 
 
     #provides my list (concatenating list of dictionaries together)
-    movie_list = json_dict1['results'] + json_dict2['results'
+    movie_list = json_dict1['results'] + json_dict2['results'] 
 
     for movie in movie_list:
         movie_id = movie['id']
@@ -44,20 +44,8 @@ def load_movies():
 
     db.session.commit()
 
-
-
-
-# def set_val_user_id():
-#     """Set value for the next user_id after seeding database"""
-
-#     # Get the Max user_id in the database
-#     result = db.session.query(func.max(User.user_id)).one()
-#     max_id = int(result[0])
-
-#     # Set the value for the next user_id to be max_id + 1
-#     query = "SELECT setval('users_user_id_seq', :new_id)"
-#     db.session.execute(query, {'new_id': max_id + 1})
-#     db.session.commit()
+def load_characters():
+    """Load character info via a CSV file."""
 
 
 if __name__ == "__main__":
