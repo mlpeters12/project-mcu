@@ -2,12 +2,13 @@
 
 {% block body %}
 
-    <h2>{{ movie_name }}</h2>
+    <h1>{{ movie_info.movie_name }}</h1>
+    <p>Released: {{ movie_info.release_date }}</p>
 
     <div class="row">
 
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <img src="{{ image }}" class="img-responsive">
+            <img src="{{ movie_info.image }}" class="img-responsive">
         </div>
 
     </div>
@@ -16,7 +17,7 @@
 
         <h3>Movie Synopsis</h3>
 
-        <p> {{ description }}</p>
+        <p> {{ movie_info.description }}</p>
     </div>
 
 {% endblock %}

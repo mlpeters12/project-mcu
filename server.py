@@ -31,14 +31,16 @@ def list_movies():
     return render_template("movie_list.html", 
                             movies=movies)
 
-@app.route("/movie/<int:movie_id>")
+@app.route("/movies/<int:movie_id>", methods=["GET"])
 def show_movie(movie_id):
     """Return page showing the details of a selected movie.
     Show info about a movie.
     """
+
+    movie_info = Movie.query.filter_by(movie_id=movie_id).one()
     
-    print movie_name
-    return render_template("movie_details.html")
+    return render_template("movie_details.html",
+                            movie_info=movie_info)
 
 
 

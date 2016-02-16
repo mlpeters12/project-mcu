@@ -8,7 +8,7 @@ div.navbar-header img {
     margin-right: 7px;
 }
 
-img.melon-list {
+img.movie-list {
     height: 15px;
 }
 
@@ -24,9 +24,3 @@ div.movie-summary .released_at {
     font-weight: bold;
 }
 
-
-/* melon-detail-page */
-
-.warning {
-    color: red;
-}
