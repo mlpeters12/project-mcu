@@ -44,8 +44,12 @@ def load_movies():
 
     db.session.commit()
 
-def load_characters():
-    """Load character info via a CSV file."""
+# def load_characters():
+#     """Load character info via a CSV file."""
+
+#     print "Characters"
+
+    
 
 
 if __name__ == "__main__":

@@ -15,7 +15,8 @@ class Character(db.Model):
     civilian_name  = db.Column(db.String(75), nullable=True)
     abilities = db.Column(db.String(400), nullable=False)
     description = db.Column(db.String(2000), nullable=False)
-    image = db.Column(db.String(100))
+    image1 = db.Column(db.String(100))
+    image2 = db.Column(db.String(100))
 
     characters = db.relationship("Group",
                                     secondary="charactergroups",
