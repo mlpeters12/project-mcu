@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <h1>{{ char_info.character_name }}</h1>
+    <h2>{{ char_info.civilian_name}}</h2>
+    <p>Abilities: {{ char_info.abilities }}</p>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <img src="{{ char_info.image1 }}" class="img-responsive">
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <img src="{{ char_info.image2 }}" class="img-responsive">
+        </div>
+    </div>
+
+    <div class="char-details">
+
+        <h3>Description:</h3>
+
+        <p> {{ char_info.description }}</p>
+    </div>
+
+{% endblock %}

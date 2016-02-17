@@ -52,16 +52,16 @@ def list_characters():
     return render_template("characters.html", 
                             characters=characters)
 
-# @app.route("/movies/<int:movie_id>", methods=["GET"])
-# def show_movie(movie_id):
-#     """Return page showing the details of a selected movie.
-#     Show info about a movie.
-#     """
+@app.route("/characters/<int:character_id>", methods=["GET"])
+def show_character(character_id):
+    """Return page showing the details of a selected movie.
+    Show info about a movie.
+    """
 
-#     movie_info = Movie.query.filter_by(movie_id=movie_id).one()
+    char_info = Character.query.filter_by(character_id=character_id).one()
     
-#     return render_template("movie_details.html",
-#                             movie_info=movie_info)
+    return render_template("char_details.html",
+                            char_info=char_info)
 
 if __name__ == "__main__":
     app.debug = True
