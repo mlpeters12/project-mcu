@@ -10,7 +10,7 @@
               <div class="well">
                   <h3><a href="/movies/{{ movie.movie_id }}">{{ movie.movie_name }}</a></h3>
                   <a href="/movies/{{ movie.movie_id }}">
-                      <img src="{{ movie.image }}" class="img-circle">
+                      <img src="https://image.tmdb.org/t/p/w185/{{ movie.image }}" class="img-responsive">
                   </a>
 
                   <div class="released_at">{{ movie.release_date }}</div>
