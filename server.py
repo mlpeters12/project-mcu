@@ -38,9 +38,12 @@ def show_movie(movie_id):
     """
 
     movie_info = Movie.query.filter_by(movie_id=movie_id).one()
-    movie_char = db.session.query(Character.character_id,Character.character_name, Character.image1).filter(Movie.movie_id==movie_id).all()
-    print movie_id  
+    movie_char = movie_info.characters
     
+    print movie_id 
+    print movie_char   
+    
+
     return render_template("movie_details.html",
                             movie_info=movie_info,
                             movie_char=movie_char)
