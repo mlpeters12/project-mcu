@@ -18,7 +18,7 @@ class Character(db.Model):
     image1 = db.Column(db.String(100))
     image2 = db.Column(db.String(100))
 
-    characters = db.relationship("Group",
+    characters = db.relationship("Character",
                                     secondary="charactergroups",
                                     backref="groups")
 
@@ -39,7 +39,7 @@ class Movie(db.Model):
     release_date = db.Column(db.String(10))
     image = db.Column(db.String(100))
 
-    characters = db.relationship("Movie",
+    characters = db.relationship("Character",
                                     secondary="moviecharacters",
                                     backref="movies")
 
@@ -64,8 +64,8 @@ class MovieCharacter(db.Model):
     def __repr__(self):
         """Representation of info when printed"""
 
-        return "<record_id=%s | movie_id=%s | character_id=%s>" %(
-            self.record_id, self.movie_id, self.character_id)
+        return "<moviecharacter_id=%s | movie_id=%s | character_id=%s>" %(
+            self.moviecharacter_id, self.movie_id, self.character_id)
 
 class Group(db.Model):
     """Table explaining the types of relationships between characters."""

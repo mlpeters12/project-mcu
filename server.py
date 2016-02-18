@@ -2,7 +2,7 @@
 
 from jinja2 import StrictUndefined
 from flask import Flask, render_template, redirect, request, flash, session
-from model import Movie, Character, connect_to_db, db
+from model import Movie, Character, MovieCharacter, connect_to_db, db
 from flask_debugtoolbar import DebugToolbarExtension
 import requests
 
@@ -38,9 +38,12 @@ def show_movie(movie_id):
     """
 
     movie_info = Movie.query.filter_by(movie_id=movie_id).one()
+    movie_char = db.session.query(Character.character_id,Character.character_name, Character.image1).filter(Movie.movie_id==movie_id).all()
+    print movie_id  
     
     return render_template("movie_details.html",
-                            movie_info=movie_info)
+                            movie_info=movie_info,
+                            movie_char=movie_char)
 
 @app.route("/characters")
 def list_characters():

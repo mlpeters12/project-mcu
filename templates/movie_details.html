@@ -19,5 +19,25 @@
 
         <p> {{ movie_info.description }}</p>
     </div>
+    <div class="movie-char-details">
+        <h2>Featured Characters</h2>
+        <div id="character-list" class="row">
+        
+        {% for char in movie_char%}
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 movie-char-summary">
+                
+                <div class="well">
+                    <h3><a href="/characters/{{ char.character_id }}">{{ char.character_name }}</a></h3>
+                    
+                    <a href="/characters/{{ char.character_id }}">
+                        <img src="{{ char.image1 }}" class="img-responsive">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+
 
 {% endblock %}
