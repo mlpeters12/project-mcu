@@ -18,9 +18,27 @@
 
     <div class="char-details">
 
-        <h3>Description:</h3>
+        <h2>Description:</h2>
 
         <p> {{ char_info.description }}</p>
+    </div>
+    
+    <div class="char-movie-details">
+        <h2>Movies Featured In:</h2>
+        <div id="movie-list" class="row">
+        
+        {% for movie in char_movie %}
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 char-movie-summary">
+                
+                <div class="well">
+                    <h3><a href="/movies/{{ movie.movie_id }}">{{ movie.movie_name }}</a></h3>
+                    
+                    <a href="/movies/{{ movie.movie_id }}">
+                        <img src="https://image.tmdb.org/t/p/w185/{{ movie.image }}" class="img-responsive">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 
 {% endblock %}

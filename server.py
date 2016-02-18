@@ -40,8 +40,8 @@ def show_movie(movie_id):
     movie_info = Movie.query.filter_by(movie_id=movie_id).one()
     movie_char = movie_info.characters
     
-    print movie_id 
-    print movie_char   
+    # print movie_id 
+    # print movie_char   
     
 
     return render_template("movie_details.html",
@@ -65,9 +65,11 @@ def show_character(character_id):
     """
 
     char_info = Character.query.filter_by(character_id=character_id).one()
+    char_movie = char_info.movies
     
     return render_template("char_details.html",
-                            char_info=char_info)
+                            char_info=char_info,
+                            char_movie=char_movie)
 
 if __name__ == "__main__":
     app.debug = True
