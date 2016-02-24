@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 
 {% block body %}
-    <h2>Movies in the MCU</h2>
+  <head>
+    <title>Characters</title>
+  </head>
+
+    <h2>Characters in the MCU</h2>
 
     <div id="character-list" class="row">
       {% for character in characters %}
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 character-summary">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 character-summary">
 
               <div class="well">
-                  <h3><a href="/characters/{{ character.character_id }}">{{ character.character_name }}</a></h3>
-                    <h4><a href="/characters/{{ character.character_id }}">{{ character.civilian_name}}</a></h4>
-                  <a href="/characters/{{ character.character_id }}">
+                  <h3>{{ character.character_name }}</h3>
+                    <h4>{{ character.civilian_name}}</h4>
                       <img src="{{ character.image1 }}" class="img-responsive">
-                  </a>
                   <a class="btn btn-primary" href="/characters/{{ character.character_id }}">Details</a>
               </div>
 

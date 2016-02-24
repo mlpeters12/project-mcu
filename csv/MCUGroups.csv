@@ -1,0 +1,10 @@
+id,name,type,image
+1,The Avengers,team,/static/img/avengers.jpg
+2,Ultron's Legion,team,/static/img/ultron.jpg
+3,S.H.I.E.L.D.,team,/static/img/shield.jpg
+4,Loki vs. Thor,enemy,/static/img/lokivthor.png
+5,Maximoff,family,/static/img/maximoff.png
+6,Black Widow + Hulk,romance,/static/img/blackwidowhulk.jpg
+7,The Howling Commandos,team,/static/img/howlingcommandos.jpg
+8,Ultron vs. Avenger's,enemy,/static/img/ultronavengers.jpg
+9,Odinson,family,/static/img/odinson.jpg

@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block body %}
+    <head>
+        <title>{{ char_info.character_name }}</title>
+    </head>
 
     <h1>{{ char_info.character_name }}</h1>
     <h2>{{ char_info.civilian_name}}</h2>
@@ -41,16 +44,17 @@
         {% endfor %}
     </div>
 
-    <div class="char-group-details">
+    <div class="char-affil-details">
         <h2>Affiliations:</h2>
         <div id="group-list" class="row">
         
-        {% for group in char_group %}
+        {% for affil in char_affil %}
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 char-group-summary">
                 
                 <div class="well">
-                    <h3><a href="">{{ group.group_name }}</a></h3>
-                    <h5>{{ group.group_type }}</h5>
+                    <h3><a href="">{{ affil.affiliation_name }}</a></h3>
+                    <h5>{{ affil.affiliation_type }}</h5>
+                    <img src="{{ affil.image }}" class="img-responsive">
                 
                 </div>
             </div>

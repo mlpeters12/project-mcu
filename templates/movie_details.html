@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block body %}
+    <head>
+        <title>{{ movie_info.movie_name }}</title>
+    </head>
 
     <h1>{{ movie_info.movie_name }}</h1>
     <p>Released: {{ movie_info.release_date }}</p>
@@ -29,7 +32,6 @@
                 <div class="well">
                     <h3><a href="/characters/{{ char.character_id }}">{{ char.character_name }}</a></h3>
                     
-                    <a href="/characters/{{ char.character_id }}">
                         <img src="{{ char.image1 }}" class="img-responsive">
                     </a>
                 </div>

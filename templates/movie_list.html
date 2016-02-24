@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
 
 {% block body %}
+  <head>
+    <title>Movies</title>
+  </head>
     <h2>Movies in the MCU</h2>
 
     <div id="movie-list" class="row">
       {% for movie in movies %}
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 movie-summary">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 movie-summary">
 
               <div class="well">
-                  <h3><a href="/movies/{{ movie.movie_id }}">{{ movie.movie_name }}</a></h3>
-                  <a href="/movies/{{ movie.movie_id }}">
+                  <h3>{{ movie.movie_name }}</h3>
                       <img src="https://image.tmdb.org/t/p/w185/{{ movie.image }}" class="img-responsive">
                   </a>
 
-                  <div class="released_at">{{ movie.release_date }}</div>
+                  <div class="released_at">Released on: {{ movie.release_date }}</div>
                   <a class="btn btn-primary" href="/movies/{{ movie.movie_id }}">Details</a>
               </div>
 

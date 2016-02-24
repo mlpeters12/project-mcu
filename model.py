@@ -18,8 +18,8 @@ class Character(db.Model):
     image1 = db.Column(db.String(100))
     image2 = db.Column(db.String(100))
 
-    groups = db.relationship("Group",
-                            secondary = "charactergroups",
+    affiliation = db.relationship("Affiliation",
+                            secondary = "characteraffiliations",
                             backref = "characters")
 
 
@@ -68,46 +68,47 @@ class MovieCharacter(db.Model):
         return "<moviecharacter_id=%s | movie_id=%s | character_id=%s>" %(
             self.moviecharacter_id, self.movie_id, self.character_id)
 
-class Group(db.Model):
+class Affiliation(db.Model):
     """Table explaining the types of relationships between characters."""
 
-    __tablename__ = "groups"
+    __tablename__ = "affiliations"
 
-    group_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    group_name = db.Column(db.String(100), nullable=False)
-    group_type = db.Column(db.String(20), nullable= False)
+    affiliation_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    affiliation_name = db.Column(db.String(100), nullable=False)
+    affiliation_type = db.Column(db.String(20), nullable= False)
+    image = db.Column(db.String(100))
 
     def __repr__(self):
         """Representation of info when printed."""
 
-        return"<group_name=%s | type=%s | id=%s>" %(
-            self.group_name, self.group_type, self.group_id)
+        return"<affiliation_name=%s | type=%s | id=%s>" %(
+            self.affiliation_name, self.affiliation_type, self.affiliation_id)
 
-class CharacterGroup(db.Model):
+class CharacterAffiliation(db.Model):
     """Middle table between Characters and Relationships."""
 
-    __tablename__="charactergroups"
+    __tablename__="characteraffiliations"
 
-    chargroup_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    charaffil_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     character_id = db.Column(db.Integer, 
                     db.ForeignKey('characters.character_id'), 
                     nullable=False)
-    group_id = db.Column(db.Integer, 
-                        db.ForeignKey('groups.group_id'), 
+    affiliation_id = db.Column(db.Integer, 
+                        db.ForeignKey('affiliations.affiliation_id'), 
                         nullable=False)
     joined_at = db.Column(db.String(50) )
     left_at = db.Column(db.String(50))
 
     characters = db.relationship("Character", 
                                 backref= "chargroups")
-    groups = db.relationship("Group",
+    affiliation = db.relationship("Affiliation",
                             backref="chargroups")
 
     def __repr__(self):
         """Representation of info when printed."""
 
-        return "group_id=%s | character_id=%s | joined_at=%s  | left_at=%s" %(
-            self.group_id, self.character_id, self.joined_at, self.left_at)
+        return "affiliation_id=%s | character_id=%s | joined_at=%s  | left_at=%s" %(
+            self.affiliation_id, self.character_id, self.joined_at, self.left_at)
 
 
 

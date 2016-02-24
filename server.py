@@ -2,7 +2,7 @@
 
 from jinja2 import StrictUndefined
 from flask import Flask, render_template, redirect, request, flash, session
-from model import Movie, Character, MovieCharacter, Group, CharacterGroup, connect_to_db, db
+from model import Movie, Character, MovieCharacter, Affiliation, CharacterAffiliation, connect_to_db, db
 from flask_debugtoolbar import DebugToolbarExtension
 import requests
 
@@ -66,14 +66,24 @@ def show_character(character_id):
 
     char_info = Character.query.filter_by(character_id=character_id).one()
     char_movie = char_info.movies
-    char_group = char_info.groups
+    char_affil = char_info.affiliation
     
 
     
     return render_template("char_details.html",
                             char_info=char_info,
                             char_movie=char_movie,
-                            char_group=char_group)
+                            char_affil=char_affil)
+
+# @app.route("/affiliations")
+# def list_affiliations():
+#     """Return page showing all affiliations between characters in the marvel cinematic universe"""
+
+
+#     affiliations = 
+
+#     return render_template("characters.html", 
+#                             characters=characters)
 
 if __name__ == "__main__":
     app.debug = True
