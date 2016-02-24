@@ -41,4 +41,20 @@
         {% endfor %}
     </div>
 
+    <div class="char-group-details">
+        <h2>Affiliations:</h2>
+        <div id="group-list" class="row">
+        
+        {% for group in char_group %}
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 char-group-summary">
+                
+                <div class="well">
+                    <h3><a href="">{{ group.group_name }}</a></h3>
+                    <h5>{{ group.group_type }}</h5>
+                
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
 {% endblock %}

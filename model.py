@@ -18,9 +18,10 @@ class Character(db.Model):
     image1 = db.Column(db.String(100))
     image2 = db.Column(db.String(100))
 
-    characters = db.relationship("Character",
-                                    secondary="charactergroups",
-                                    backref="groups")
+    groups = db.relationship("Group",
+                            secondary = "charactergroups",
+                            backref = "characters")
+
 
     def __repr__(self):
         """Representation of info when printed."""
@@ -73,7 +74,7 @@ class Group(db.Model):
     __tablename__ = "groups"
 
     group_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    group_name = db.Column(db.String(100), nullable = False)
+    group_name = db.Column(db.String(100), nullable=False)
     group_type = db.Column(db.String(20), nullable= False)
 
     def __repr__(self):
@@ -94,13 +95,19 @@ class CharacterGroup(db.Model):
     group_id = db.Column(db.Integer, 
                         db.ForeignKey('groups.group_id'), 
                         nullable=False)
-    joined_at = db.Column(db.String(50), nullable=False)
+    joined_at = db.Column(db.String(50) )
     left_at = db.Column(db.String(50))
 
     characters = db.relationship("Character", 
-                                backref= db.backref("chargroups"))
+                                backref= "chargroups")
     groups = db.relationship("Group",
-                            backref=db.backref("chargroups"))
+                            backref="chargroups")
+
+    def __repr__(self):
+        """Representation of info when printed."""
+
+        return "group_id=%s | character_id=%s | joined_at=%s  | left_at=%s" %(
+            self.group_id, self.character_id, self.joined_at, self.left_at)
 
 
 
