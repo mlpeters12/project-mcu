@@ -2,6 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+
 ############################################################################
 #Model Definitions
 
@@ -18,10 +19,10 @@ class Character(db.Model):
     image1 = db.Column(db.String(100))
     image2 = db.Column(db.String(100))
 
+
     affiliation = db.relationship("Affiliation",
                             secondary = "characteraffiliations",
                             backref = "characters")
-
 
     def __repr__(self):
         """Representation of info when printed."""
@@ -78,11 +79,13 @@ class Affiliation(db.Model):
     affiliation_type = db.Column(db.String(20), nullable= False)
     image = db.Column(db.String(100))
 
+
     def __repr__(self):
         """Representation of info when printed."""
 
         return"<affiliation_name=%s | type=%s | id=%s>" %(
             self.affiliation_name, self.affiliation_type, self.affiliation_id)
+
 
 class CharacterAffiliation(db.Model):
     """Middle table between Characters and Relationships."""

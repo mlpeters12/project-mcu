@@ -31,7 +31,7 @@
         <div id="movie-list" class="row">
         
         {% for movie in char_movie %}
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 char-movie-summary">
+            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 char-movie-summary">
                 
                 <div class="well">
                     <h3><a href="/movies/{{ movie.movie_id }}">{{ movie.movie_name }}</a></h3>
@@ -43,6 +43,7 @@
             </div>
         {% endfor %}
     </div>
+     </div>
 
     <div class="char-affil-details">
         <h2>Affiliations:</h2>
@@ -60,5 +61,6 @@
             </div>
         {% endfor %}
     </div>
+
 
 {% endblock %}

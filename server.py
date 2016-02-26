@@ -1,10 +1,11 @@
 """FINAL PROJECT."""
 
 from jinja2 import StrictUndefined
-from flask import Flask, render_template, redirect, request, flash, session
+from flask import Flask, render_template, redirect, request, flash, session, jsonify
 from model import Movie, Character, MovieCharacter, Affiliation, CharacterAffiliation, connect_to_db, db
 from flask_debugtoolbar import DebugToolbarExtension
 import requests
+import json
 
 
 app = Flask(__name__)
@@ -26,10 +27,17 @@ def list_movies():
     """Return page showing all movies in the marvel cinematic universe"""
 
 
-    movies = db.session.query(Movie.movie_name, Movie.movie_id, Movie.description, Movie.release_date, Movie.image).order_by(Movie.release_date).all()
+    movies = Movie.query.order_by(Movie.release_date).all()
 
     return render_template("movie_list.html", 
                             movies=movies)
+
+# @app.route("/affiliations")
+# def list_affiliations():
+#     """Return page showing all relationshuip in the marvel cinematic universe"""
+    
+
+#     return render_template("/index.html")
 
 @app.route("/movies/<int:movie_id>", methods=["GET"])
 def show_movie(movie_id):
@@ -39,9 +47,6 @@ def show_movie(movie_id):
 
     movie_info = Movie.query.filter_by(movie_id=movie_id).one()
     movie_char = movie_info.characters
-    
-    # print movie_id 
-    # print movie_char   
     
 
     return render_template("movie_details.html",
@@ -67,7 +72,6 @@ def show_character(character_id):
     char_info = Character.query.filter_by(character_id=character_id).one()
     char_movie = char_info.movies
     char_affil = char_info.affiliation
-    
 
     
     return render_template("char_details.html",
