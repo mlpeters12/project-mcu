@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Force Layout Example 1</title>
+  <link rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css"/>
   <style>
 
     .node {
@@ -55,8 +57,10 @@
      {char1: 'Scarlet Witch', char2: 'Iron Man'},
      {char1: 'Scarlet Witch', char2: 'Thor'},
      {char1: 'Scarlet Witch', char2: 'Hulk'},
-     {char1: 'Scarlet Witch', char2: 'Captain America'},   
+     {char1: 'Scarlet Witch', char2: 'Captain America'},      
      {char1: 'Scarlet Witch', char2: 'Scarlet Witch'},   
+     {char1: 'Scarlet Witch', char2: 'Quiksilver'},   
+     {char1: 'Scarlet Witch', char2: 'Black Widow'},   
   ];
 
   
@@ -65,11 +69,15 @@
   // property. The values of those properties are the indices in
   // the `nodes` array of the two endpoints of the link.
 
-  var links = [{source: 0, target: 1},
-              {source: 1, target: 2},
-              {source: 2, target: 3},
-              {source: 3, target: 4},
-              {source: 4, target: 0},
+  var links = [{source: 0, target: 1, value: 2},
+              {source: 0, target: 2, value: 2},
+              {source: 0, target: 3, value: 2},
+              {source: 0, target: 4, value: 2},
+              {source: 5, target: 4, value: 2},
+              {source: 3, target: 4, value: 2},
+              {source: 2, target: 6, value: 1},
+              {source: 6, target: 1, value: 1},
+              
   ];
   // Here's were the code begins. We start off by creating an SVG
   // container to hold the visualization. We only need to specify
@@ -97,7 +105,7 @@
   // nodes that are connected. (It is, thus, the length we'd
   // like our links to have.)
 
-  force.linkDistance(width / 2);
+  force.linkDistance(width / 3);
 
   // Next we'll add the nodes and links to the visualization.
   // Note that we're just sticking them into the SVG container
@@ -129,17 +137,24 @@
 
   var color = d3.scale.category20();
 
-  node.append("circle")
-      .attr("r", 15)
-      .style("fill", function (d) {
-        return color(d.char1);
-      });
+  // node.append("circle")
+  //     .attr("r", 30)
+  //     .style("fill", function (d) {
+  //       return color(d.char1);
+  //     });
 
   // add the text
 
   node.append("text").text(function (d) {
     return d.char2;
   });
+
+  node.append("image")
+      .attr("xlink:href", "https://github.com/favicon.ico")
+      // .attr("x", -8)
+      // .attr("y", -8)
+      .attr("width", 16)
+      .attr("height", 16);
 
   // We're about to tell the force layout to start its
   // calculations. We do, however, want to know when those

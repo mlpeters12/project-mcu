@@ -12,7 +12,27 @@
 
 <html>
 <head>
-  <link href="" rel="stylesheet">
+  <link rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css"/>
+  <style>
+  line {
+  stroke: #999;
+  stroke-width: 1px;
+}
+
+circle {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+text {
+  fill: #000;
+  font: 10px sans-serif;
+  pointer-events: none;
+}
+</style>
+
 </head>
 
 <body>
@@ -21,7 +41,7 @@
 <script>
 
 
-  d3.csv("/csv/graph.csv", makeForceGraph);
+  d3.csv("/csv/graph2.csv", makeForceGraph);
 
   function makeForceGraph(error, links) {
     console.log(links);
@@ -71,7 +91,6 @@
         .enter().append("g")
         .attr("class", "node")
         .call(force.drag);
-
 
     var color = d3.scale.category20();
 
