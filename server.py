@@ -1,7 +1,7 @@
 """FINAL PROJECT."""
 
 from jinja2 import StrictUndefined
-from flask import Flask, render_template, redirect, request, flash, session, jsonify
+from flask import Flask, render_template, redirect, request, flash, session, url_for
 from model import Movie, Character, MovieCharacter, Affiliation, CharacterAffiliation, connect_to_db, db
 from flask_debugtoolbar import DebugToolbarExtension
 import requests
@@ -79,15 +79,12 @@ def show_character(character_id):
                             char_movie=char_movie,
                             char_affil=char_affil)
 
-# @app.route("/affiliations")
-# def list_affiliations():
-#     """Return page showing all affiliations between characters in the marvel cinematic universe"""
+@app.route("/connections")
+def list_affiliations():
+    """Return page showing all affiliations between characters in the marvel cinematic universe"""
 
+    return render_template("index.html")
 
-#     affiliations = 
-
-#     return render_template("characters.html", 
-#                             characters=characters)
 
 if __name__ == "__main__":
     app.debug = True
@@ -97,3 +94,7 @@ if __name__ == "__main__":
     DebugToolbarExtension(app)
 
     app.run()
+
+    url_for('static', filename='graph2.csv')
+
+    

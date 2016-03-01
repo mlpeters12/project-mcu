@@ -2,7 +2,7 @@
 <head>
     <link rel="stylesheet"
           href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css"/>
-    <link rel="stylesheet" href="/static/css/site.css"/>
+    <link rel="stylesheet" href="/static/site.css"/>
   
 </head>
 
@@ -13,14 +13,14 @@
 
         <div class="navbar-header">
             <img src="">
-            <a class="navbar-brand" href="/">The Marvel Cinematic Universe</a>
+            <a class="navbar-brand" href="/">THE MARVEL CINEMATIC UNIVERSE</a>
         </div>
 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/movie_list">Movies</a></li>
-                <li><a href="/characters">Characters</a></li>
-                <li><a href="">Affiliations</a></li>
+                <li><a href="/movie_list">MOVIES</a></li>
+                <li><a href="/characters">CHARACTERS</a></li>
+                <li><a href="/connections">CONNECTIONS</a></li>
             </ul>
         </div>
 
@@ -28,13 +28,6 @@
 </div>
 
 <div class="container">
-
-  <!-- Show flashed messages -->
-  {% with messages = get_flashed_messages() %}
-      {% for message in messages %}
-          <div class="alert alert-warning">{{ message }}</div>
-      {% endfor %}
-  {% endwith %}
 
   <!-- This is where the main content goes. -->
   {% block body %}
@@ -44,8 +37,6 @@
 </div>
 
 </body>
-  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-  <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
-  <script src="/static/js/affilation.js"></script>
+  <script src="http://d3js.org/d3.v3.js"></script>
   
 </html>

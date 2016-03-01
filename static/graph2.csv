@@ -1,0 +1,18 @@
+target,source,value
+"Captain America","Iron Man",1
+"Thor","Iron Man"
+"Hulk","Iron Man"
+"War Machine","Iron Man"
+"Black Widow","Iron Man"
+"Hawkeye","Iron Man"
+"Vision","Iron Man"
+"Scarlet Witch","Captain America"
+"Quiksilver","Captain America"
+"Falcon","Captain America"
+"Winter Soldier","Captain America",1
+"Quiksilver","Scarlet Witch"
+"Ant-Man","Falcon",2
+"Wasp","Ant-Man",2
+"Hulk","Black Widow"
+"Vision","Scarlet Witch"
+"Winter Soldier","Black Widow"
