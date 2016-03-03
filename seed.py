@@ -14,17 +14,19 @@ def load_movies():
     payload1 = {"page":"1","api_key":"d8ee42eb41cc997b74a9762e2a427de7"}
     payload2 = {"page":"2","api_key":"d8ee42eb41cc997b74a9762e2a427de7"}
     
+    
     results1 = requests.get("http://api.themoviedb.org/3/keyword/180547/movies",params=payload1)
     results2 = requests.get("http://api.themoviedb.org/3/keyword/180547/movies",params=payload2)
-
+    
 
     #turns JSON result into a dictionary
     json_dict1 = results1.json()
     json_dict2 = results2.json()
+    
 
 
     #provides my list (concatenating list of dictionaries together)
-    movie_list = json_dict1['results'] + json_dict2['results'] 
+    movie_list = json_dict1['results'] + json_dict2['results']
 
     for movie in movie_list:
         movie_id = movie['id']
@@ -32,6 +34,7 @@ def load_movies():
         description = movie['overview']
         release_date = movie['release_date']
         image = movie['poster_path']
+        
 
         new_movie_list = Movie(movie_id = movie_id,
                                 movie_name = movie_name,
@@ -44,12 +47,6 @@ def load_movies():
 
     db.session.commit()
 
-# def load_characters():
-#     """Load character info via a CSV file."""
-
-#     print "Characters"
-
-    
 
 
 if __name__ == "__main__":

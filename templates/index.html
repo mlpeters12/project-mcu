@@ -95,7 +95,6 @@
         .data(force.nodes())
         .enter().append("g")
         .attr("class", "node")
-        .on("click",click)
         .on("dblclick",dblclick)
         .on("click",click)
         .call(force.drag);

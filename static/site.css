@@ -1,0 +1,18 @@
+* {
+  border-radius: 0 !important;
+}
+
+.navbar-brand {
+    fill: #000;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #001a33;
+    border-color: white;
+}
+
+.img-responsive {
+    fill: white;
+}

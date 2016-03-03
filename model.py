@@ -80,6 +80,7 @@ class Affiliation(db.Model):
     image = db.Column(db.String(100))
 
 
+
     def __repr__(self):
         """Representation of info when printed."""
 
@@ -102,10 +103,6 @@ class CharacterAffiliation(db.Model):
     joined_at = db.Column(db.String(50) )
     left_at = db.Column(db.String(50))
 
-    characters = db.relationship("Character", 
-                                backref= "chargroups")
-    affiliation = db.relationship("Affiliation",
-                            backref="chargroups")
 
     def __repr__(self):
         """Representation of info when printed."""

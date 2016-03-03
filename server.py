@@ -3,6 +3,7 @@
 from jinja2 import StrictUndefined
 from flask import Flask, render_template, redirect, request, flash, session, url_for
 from model import Movie, Character, MovieCharacter, Affiliation, CharacterAffiliation, connect_to_db, db
+from helper import load_images
 from flask_debugtoolbar import DebugToolbarExtension
 import requests
 import json
@@ -45,13 +46,15 @@ def show_movie(movie_id):
     Show info about a movie.
     """
 
+    backdrop = load_images(movie_id)
     movie_info = Movie.query.filter_by(movie_id=movie_id).one()
     movie_char = movie_info.characters
     
 
     return render_template("movie_details.html",
                             movie_info=movie_info,
-                            movie_char=movie_char)
+                            movie_char=movie_char,
+                            backdrop=backdrop)
 
 @app.route("/characters")
 def list_characters():
@@ -96,5 +99,3 @@ if __name__ == "__main__":
     app.run()
 
     url_for('static', filename='graph2.csv')
-
-    

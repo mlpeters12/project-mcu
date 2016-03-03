@@ -1,17 +1,17 @@
 target,source,value
-"Captain America","Iron Man",2
-"Thor","Iron Man",2
-"Hulk","Iron Man",2
-"War Machine","Iron Man",2
-"Black Widow","Iron Man",2
-"Hawkeye","Iron Man",3
-"Vision","Iron Man",3
-"Scarlet Witch","Captain America",1
-"Quiksilver","Captain America",1
-"Falcon","Captain America",1
-"Winter Soldier","Captain America",1
-"Quiksilver","Scarlet Witch",4
-"Ant-Man","Falcon",2
-"Wasp","Ant-Man",2
-"Hulk","Black Widow",3
-"Winter Soldier","Black Widow",2
+"Captain America","Iron Man"
+"Thor","Iron Man"
+"Hulk","Iron Man"
+"War Machine","Iron Man"
+"Black Widow","Iron Man"
+"Hawkeye","Iron Man"
+"Vision","Iron Man"
+"Scarlet Witch","Captain America"
+"Quiksilver","Captain America"
+"Falcon","Captain America"
+"Winter Soldier","Captain America"
+"Quiksilver","Scarlet Witch"
+"Ant-Man","Falcon"
+"Wasp","Ant-Man"
+"Hulk","Black Widow"
+"Winter Soldier","Black Widow"
