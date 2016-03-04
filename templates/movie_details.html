@@ -5,16 +5,19 @@
         <title>{{ movie_info.movie_name }}</title>
     </head>
 
-    <h1>{{ movie_info.movie_name }}</h1>
+    <h1 class="page-header">{{ movie_info.movie_name }}</h1>
     <p>Released: {{ movie_info.release_date }}</p>
 
     <div class="row">
 
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <img src="https://image.tmdb.org/t/p/w185/{{ movie_info.image }}" class="img-responsive">
+            <img src="https://image.tmdb.org/t/p/w185/{{ movie_info.image }}" class="">
         </div>
+        
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <br>
+
+        <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     {% for image in backdrop%}
@@ -32,13 +35,13 @@
         <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a>
+        </a> -->
          
     </div>
 
     <div class="movie-details">
 
-        <h2>Movie Synopsis</h2>
+        <h2>Movie Synopsis:</h2>
 
         <p> {{ movie_info.description }}</p>
     </div>

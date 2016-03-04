@@ -4,19 +4,18 @@
   <head>
     <title>Movies</title>
   </head>
-    <h2 id="movie">MOVIES</h2>
+    <h1 id="movie" class="page-header">MOVIES</h1>
 
     <div id="movie-list" class="row">
       {% for movie in movies %}
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 movie-summary">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 movie-summary">
 
-              <div class="well">
-                  <h3>{{ movie.movie_name }}</h3>
-                      <img src="https://image.tmdb.org/t/p/w185/{{ movie.image }}" class="img-responsive">
-                  </a>
+              <div class="div">
+                <a href="/movies/{{ movie.movie_id }}"> <img style="max-height:275px" src="https://image.tmdb.org/t/p/w185/{{ movie.image }}" title="{{ movie.movie_name }}">
+                </a>
 
                   <div class="released_at">Released on: {{ movie.release_date }}</div>
-                  <a class="btn btn-primary" href="/movies/{{ movie.movie_id }}">Details</a>
+                
               </div>
 
           </div>

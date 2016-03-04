@@ -1,5 +1,7 @@
 * {
   border-radius: 0 !important;
+  color: #000;
+  font-family:'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 
 .navbar-brand {
@@ -8,11 +10,40 @@
     font-weight: bold;
 }
 
-.btn {
-    background-color: #001a33;
-    border-color: white;
-}
 
 .img-responsive {
     fill: white;
 }
+
+.released_at {
+    font-family:'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.div {
+    text-align: center;
+    font-family:'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    font-weight: bold;
+}
+
+p {
+   font-family:'Century Gothic', CenturyGothic, AppleGothic, sans-serif; 
+}
+
+#movie {
+    text-align: center;
+    font-family:'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    font-weight: bold;
+}
+
+#characters {
+    text-align: center;
+    font-family:'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    font-weight: bold;
+}
+
+
+
+
+

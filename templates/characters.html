@@ -5,17 +5,16 @@
     <title>Characters</title>
   </head>
 
-    <h2>CHARACTERS</h2>
+    <h1 id="characters" class="page-header">CHARACTERS</h1>
 
     <div id="character-list" class="row">
       {% for character in characters %}
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 character-summary">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 character-summary">
 
-              <div class="well">
+              <div class="div">
                   <h3>{{ character.character_name }}</h3>
-                    <h4>{{ character.civilian_name}}</h4>
-                      <img style="max-height:220px" src="{{ character.image1 }}" class="img-responsive">
-                  <a class="btn btn-primary" href="/characters/{{ character.character_id }}">Details</a>
+                      <a href="/characters/{{ character.character_id }}"> <img style="max-height:220px" src="{{ character.image1 }}" class="">
+                      </a>
               </div>
 
           </div>
