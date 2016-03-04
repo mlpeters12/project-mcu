@@ -5,17 +5,19 @@
         <title>{{ movie_info.movie_name }}</title>
     </head>
 
-    <h1 class="page-header">{{ movie_info.movie_name }}</h1>
-    <p>Released: {{ movie_info.release_date }}</p>
+    <h1 class="page-header"><strong>{{ movie_info.movie_name }}</strong></h1>
+    <p>Released on: {{ movie_info.release_date }}</p>
 
     <div class="row">
 
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <img src="https://image.tmdb.org/t/p/w185/{{ movie_info.image }}" class="">
+        <div class="col-xs-12 col-sm-3 col-md-3">
+            <img style="height:300px" src="https://image.tmdb.org/t/p/w185/{{ movie_info.image }}" class="">
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-9 well">
+            <h4><strong>Movie Synopsis:</strong></h4>
+                <p> {{ movie_info.description }}</p>
         </div>
         
-
-        <br>
 
         <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
@@ -41,21 +43,19 @@
 
     <div class="movie-details">
 
-        <h2>Movie Synopsis:</h2>
-
-        <p> {{ movie_info.description }}</p>
+        
     </div>
     <div class="movie-char-details">
-        <h2>Featured Characters:</h2>
+        <h3><strong>Featured Characters:<strong></h3>
         <div id="character-list" class="row">
         
         {% for char in movie_char%}
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 movie-char-summary">
                 
-                <div class="well">
+                <div class="">
                     <h3><a href="/characters/{{ char.character_id }}">{{ char.character_name }}</a></h3>
                     
-                        <img style="max-height:220px" src="{{ char.image1 }}" class="img-responsive">
+                        <img style="height:200px" src="{{ char.image1 }}" class="img-responsive">
                     </a>
                 </div>
             </div>

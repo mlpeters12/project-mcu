@@ -4,9 +4,9 @@
     <head>
         <title>{{ char_info.character_name }}</title>
     </head>
-    <h1 class="page-header">{{ char_info.character_name }}<small> {{ char_info.civilian_name}}</small></h1>
+    <h1 class="page-header"><strong>{{ char_info.character_name }}</strong><small> {{ char_info.civilian_name}}</small></h1>
     
-    <p>Abilities: {{ char_info.abilities }}</p>
+    <p><strong>Abilities:</strong> {{ char_info.abilities }}</p>
 
     <div class="row">
 
@@ -20,23 +20,22 @@
 
     <div class="char-details">
 
-        <h2>Description:</h2>
+        <h3><strong>Description:</strong></h3>
 
         <p> {{ char_info.description }}</p>
     </div>
     
     <div class="char-movie-details">
-        <h2>Movies Featured In:</h2>
+        <h3><strong>Movies Featured In:</strong></h3>
         <div id="movie-list" class="row">
         
         {% for movie in char_movie %}
             <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 char-movie-summary">
                 
-                <div class="well">
-                    <h3><a href="/movies/{{ movie.movie_id }}">{{ movie.movie_name }}</a></h3>
+                <div class="">
                     
                     <a href="/movies/{{ movie.movie_id }}">
-                        <img style="max-height:300px" src="https://image.tmdb.org/t/p/w185/{{ movie.image }}" class="img-responsive">
+                        <img style="max-height:200px" src="https://image.tmdb.org/t/p/w185/{{ movie.image }}" class="img-responsive">
                     </a>
                 </div>
             </div>
@@ -45,16 +44,16 @@
      </div>
 
     <div class="char-affil-details">
-        <h2>Affiliations:</h2>
+        <h3><strong>Affiliations:</strong></h3>
         <div id="group-list" class="row">
         
         {% for affil in char_affil %}
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 char-group-summary">
                 
-                <div class="well">
+                <div class="">
                     <h3><a href="/connections">{{ affil.affiliation_name }}</a></h3>
-                    <h5>{{ affil.affiliation_type }}</h5>
-                    <img src="{{ affil.image }}" class="img-responsive">
+                    <h5 id="team-type">{{ affil.affiliation_type }}</h5>
+                    <img style="height:200px" src="{{ affil.image }}" class="img-responsive">
                 
                 </div>
             </div>
