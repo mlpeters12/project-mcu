@@ -24,20 +24,21 @@
   text {
     fill: #000;
     font: 14px 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-    font-weight: bold;
   pointer-events: none;
 }
   body {
     fill: #000;
     font: 14px 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-    font-weight: bold;
-  }
-</style>
 
+  }
+
+
+</style>
+<title>Connections</title>
 </head>
 
 <body>
-  <h1 class="page-header"><strong>CHARACTER CONNECTIONS </strong><small>As of "Avengers: Age of Ultron"</small></h1>
+  <h1 class="page-header">CHARACTER CONNECTIONS <small>As of "Avengers: Age of Ultron"</small></h1>
 
 <script src="http://d3js.org/d3.v3.js"></script>
 
@@ -76,10 +77,13 @@
         .charge(-450)
         .on("tick", tick)
         .start();
+    
 
     var svg = d3.select("body").append("svg")
         .attr("width", width)
         .attr("height", height);
+
+
 
     // add the links and the arrows
 

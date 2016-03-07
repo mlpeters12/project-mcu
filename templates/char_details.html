@@ -4,17 +4,17 @@
     <head>
         <title>{{ char_info.character_name }}</title>
     </head>
-    <h1 class="page-header"><strong>{{ char_info.character_name }}</strong><small> {{ char_info.civilian_name}}</small></h1>
+    <h1 class="page-header">{{ char_info.character_name }}<small> {{ char_info.civilian_name}}</small></h1>
     
     <p><strong>Abilities:</strong> {{ char_info.abilities }}</p>
 
     <div class="row">
 
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <img style="max-height:300px" src="{{ char_info.image1 }}" class="img-responsive">
+            <img style="max-height:300px" src="{{ char_info.image2 }}" class="img-responsive">
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <img style="max-height:300px" src="{{ char_info.image2 }}" class="img-responsive">
+            <img style="max-height:300px" src="{{ char_info.image1 }}" class="img-responsive">
         </div>
     </div>
 
@@ -50,7 +50,7 @@
         {% for affil in char_affil %}
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 char-group-summary">
                 
-                <div class="">
+                <div class="affiliations">
                     <h3><a href="/connections">{{ affil.affiliation_name }}</a></h3>
                     <h5 id="team-type">{{ affil.affiliation_type }}</h5>
                     <img style="height:200px" src="{{ affil.image }}" class="img-responsive">

@@ -1,7 +1,10 @@
 <html>
 <head>
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet"
           href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css"/>
+    <link href="sticky-footer-navbar.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/site.css"/>
   
 </head>
@@ -9,6 +12,7 @@
 <body>
 
 <div class="navbar navbar-inverse navbar-static-top">
+    <div id ="wrap">
     <div class="container">
 
         <div class="navbar-header">
@@ -34,20 +38,14 @@
       BODY OF PAGE GOES HERE VIA INHERITANCE
   {% endblock %}
 
-<!-- </div>
-<div class="container">
-  <div class="row">
-    <div class="span12">
-      <div id="footer">
-
-          <ul class="footer">
-
-            <li>Data from 'The Movie Database.Org'</li>
-          </ul>
+<div id="footer">
+  <div class="container">
+      
+          
       </div>
     </div>
   </div>
-</div -->
+</div
             
 
 

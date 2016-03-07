@@ -1,7 +1,8 @@
 * {
   border-radius: 0 !important;
-  color: #000;
-  font-family:'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  color: #000 ;
+  font-family:'TradeGothic', sans-serif;
+  color: #e6e6e6;
 }
 
 .navbar-brand {
@@ -12,41 +13,59 @@
 
 
 .img-responsive {
-    fill: white;
+    fill: #000;
 }
 
 .released_at {
-    font-family:'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-    font-weight: bold;
     margin-bottom: 10px;
 }
 
 .div {
     text-align: center;
-    font-family:'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-    font-weight: bold;
     margin-bottom: 15px;
 }
 
-p {
-   font-family:'Century Gothic', CenturyGothic, AppleGothic, sans-serif; 
-}
 
 #movie {
     text-align: center;
-    font-family:'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-    font-weight: bold;
 }
 
 #characters {
     text-align: center;
-    font-family:'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-    font-weight: bold;
 }
 
 #team-type {
     text-transform: uppercase;
 }
+
+#movie-char {
+    margin-bottom: 10px; 
+}
+
+.page-header {
+    text-transform: uppercase;
+
+}
+.page-header small{
+    text-transform: capitalize;
+    color:#a6a6a6;
+}
+
+#char {
+    text-transform: uppercase;
+    font-weight: 
+}
+
+.affiliations{
+    text-transform: uppercase;
+}
+
+.description {
+    background-color: #333333;
+    padding: 10px 10px 10px 10px;
+}
+
+
 
 
 
