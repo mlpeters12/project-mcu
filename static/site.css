@@ -40,6 +40,7 @@
 
 #movie-char {
     margin-bottom: 10px; 
+    align: middle;
 }
 
 .page-header {
@@ -64,6 +65,11 @@
     background-color: #333333;
     padding: 10px 10px 10px 10px;
 }
+
+#name {
+    text-align: center
+}
+
 
 
 
