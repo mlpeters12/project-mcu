@@ -21,22 +21,23 @@
 * JSON
 * D3.js
 * TMDb API
+This product uses the TMDb API but is not endorsed or certified by TMDb.
 
-#### Version 2.0
+#### Version 2.0:
 
 ###### Visually define connections in D3
 I'd like to easily identify the type of relationship between characters to the user (ex: romantic, family, team relationships)
 
 ###### Solid Character API
-In a future version, I would want to identify a reliable API that contains data on the movie version of the characters, not the comics version.
+In a future version, I would want to identify a reliable API that contains data on the movie version of the characters, not the comic book version.
 
 ###### Timeline toggle on connections in D3
 I would like to allow the user to determine the time in the MCU to show how certain connections change throughout the development of the movies. 
 
-#### Favorite Challenges
+#### Favorite Challenge:
 Once I was able to get the D3.js to render on the page, I was met with the task of creating a visualization that could be easily understand by a user. This allowed be to dive back into my data visualization skills and determine how the visualization should be rendered. Just because you can display something, doesn't mean that you should.
 
-#### About the Developer
-Megan is a software engineer living in Denver, CO. She enjoys hiking, trying new breweries, and snuggling with her English Bulldog, Marvel. Yes, Marvel.
+#### About the Developer:
+Megan is a Software Engineer living in Denver, CO. She enjoys hiking, trying new breweries, and snuggling with her English Bulldog, Marvel. Yes, Marvel.
 
 Learn more about the developer: www.linkedin.com/in/meganpeterson12/
