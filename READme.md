@@ -7,6 +7,7 @@
 ![Movie Details](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/movie-details.png)
 ![Character Details](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/character-details.png)
 ![Connections](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/connections.png)
+D3 Force Layout
 ![Demo](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/demo.gif)
 
 #### Technology Stack
@@ -20,8 +21,7 @@
 * Javascript
 * JSON
 * D3.js
-* TMDb API
-This product uses the TMDb API but is not endorsed or certified by TMDb.
+* TMDb API - This product uses the TMDb API but is not endorsed or certified by TMDb.
 
 #### Version 2.0:
 
