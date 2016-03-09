@@ -7,7 +7,7 @@
 ![Movie Details](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/movie-details.png)
 ![Character Details](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/character-details.png)
 ![Connections](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/connections.png)
-![Demo](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/demo.gif)
+<!-- ![Demo](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/demo.gif) -->
 
 #### Technology Stack
 * Python
