@@ -6,7 +6,7 @@
 ![Homepage](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/homepage.png)
 ![Movie Details](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/movie-details.png)
 ![Character Details](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/character-details.png)
-![Connections](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/connections.mov)
+![Connections](https://raw.githubusercontent.com/mlpeters12/project-mcu/master/static/readme/connections.png)
 
 #### Technology Stack
 * Python
